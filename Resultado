@@ -1,0 +1,107 @@
+Tabela com os jogadores:
+
+   nome_do_jogador  salario_do_jogador posicao_jogador nome_time_jogador  \
+0    Rafael Cabral            200000.0         Goleiro          Cruzeiro   
+1           Marlon            180000.0         Lateral          Cruzeiro   
+2  Matheus Pereira            500000.0            Meia          Cruzeiro   
+3          William            250000.0        Atacante          Cruzeiro   
+4      Lucas Silva            220000.0            Meia          Cruzeiro   
+5      Luis Suárez           1500000.0        Atacante            Grêmio   
+6       Arrascaeta           1200000.0            Meia          Flamengo   
+7             Hulk            850000.0        Atacante          Atlético   
+
+  nome_estado_jogador  
+0                  MG  
+1                  MG  
+2                  MG  
+3                  MG  
+4                  MG  
+5                  RS  
+6                  RJ  
+7                  MG  
+
+============================================================
+
+1️⃣ Jogadores com salário acima de R$ 20.000,00:
+
+   nome_do_jogador nome_time_jogador
+0    Rafael Cabral          Cruzeiro
+1           Marlon          Cruzeiro
+2  Matheus Pereira          Cruzeiro
+3          William          Cruzeiro
+4      Lucas Silva          Cruzeiro
+5      Luis Suárez            Grêmio
+6       Arrascaeta          Flamengo
+7             Hulk          Atlético
+
+============================================================
+
+2️⃣ Jogadores dos times de Minas Gerais:
+
+   nome_do_jogador  salario_do_jogador
+0    Rafael Cabral            200000.0
+1           Marlon            180000.0
+2  Matheus Pereira            500000.0
+3          William            250000.0
+4      Lucas Silva            220000.0
+7             Hulk            850000.0
+
+============================================================
+
+3️⃣ Jogadores com a letra 'u' no nome:
+
+   nome_do_jogador nome_time_jogador
+2  Matheus Pereira          Cruzeiro
+4      Lucas Silva          Cruzeiro
+5      Luis Suárez            Grêmio
+7             Hulk          Atlético
+
+============================================================
+
+4️⃣ Jogadores ordenados por salário (decrescente):
+
+   nome_do_jogador  salario_do_jogador nome_time_jogador
+5      Luis Suárez           1500000.0            Grêmio
+6       Arrascaeta           1200000.0          Flamengo
+7             Hulk            850000.0          Atlético
+2  Matheus Pereira            500000.0          Cruzeiro
+3          William            250000.0          Cruzeiro
+4      Lucas Silva            220000.0          Cruzeiro
+0    Rafael Cabral            200000.0          Cruzeiro
+1           Marlon            180000.0          Cruzeiro
+
+============================================================
+
+5️⃣ Jogadores ordenados por time e salário:
+
+   nome_do_jogador  salario_do_jogador nome_time_jogador
+7             Hulk            850000.0          Atlético
+2  Matheus Pereira            500000.0          Cruzeiro
+3          William            250000.0          Cruzeiro
+4      Lucas Silva            220000.0          Cruzeiro
+0    Rafael Cabral            200000.0          Cruzeiro
+1           Marlon            180000.0          Cruzeiro
+6       Arrascaeta           1200000.0          Flamengo
+5      Luis Suárez           1500000.0            Grêmio
+
+============================================================
+
+6️⃣ Quantidade de jogadores por time:
+
+nome_time_jogador
+Cruzeiro    5
+Grêmio      1
+Flamengo    1
+Atlético    1
+Name: count, dtype: int64
+
+============================================================
+
+7️⃣ Média salarial por time:
+
+nome_time_jogador
+Atlético     850000.0
+Cruzeiro     270000.0
+Flamengo    1200000.0
+Grêmio      1500000.0
+Name: salario_do_jogador, dtype: float64
