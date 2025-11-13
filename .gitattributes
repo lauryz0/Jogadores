@@ -1,2 +1,66 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+import pandas as pd
+
+# Criando o DataFrame com os jogadores
+dados = {
+    "nome_do_jogador": [
+        "Rafael Cabral", "Marlon", "Matheus Pereira", "William", "Lucas Silva",
+        "Luis Suárez", "Arrascaeta", "Hulk"
+    ],
+    "salario_do_jogador": [
+        200000.00, 180000.00, 500000.00, 250000.00, 220000.00,
+        1500000.00, 1200000.00, 850000.00
+    ],
+    "posicao_jogador": [
+        "Goleiro", "Lateral", "Meia", "Atacante", "Meia",
+        "Atacante", "Meia", "Atacante"
+    ],
+    "nome_time_jogador": [
+        "Cruzeiro", "Cruzeiro", "Cruzeiro", "Cruzeiro", "Cruzeiro",
+        "Grêmio", "Flamengo", "Atlético"
+    ],
+    "nome_estado_jogador": [
+        "MG", "MG", "MG", "MG", "MG",
+        "RS", "RJ", "MG"
+    ]
+}
+
+df = pd.DataFrame(dados)
+
+# Mostrando o DataFrame
+print("Tabela com os jogadores:\n")
+print(df)
+print("\n" + "="*60 + "\n")
+
+# 1) Jogadores com salário acima de R$ 20.000,00
+print("1️⃣ Jogadores com salário acima de R$ 20.000,00:\n")
+print(df.loc[df["salario_do_jogador"] > 20000, ["nome_do_jogador", "nome_time_jogador"]])
+print("\n" + "="*60 + "\n")
+
+# 2) Jogadores dos times de Minas Gerais
+print("2️⃣ Jogadores dos times de Minas Gerais:\n")
+print(df.loc[df["nome_estado_jogador"] == "MG", ["nome_do_jogador", "salario_do_jogador"]])
+print("\n" + "="*60 + "\n")
+
+# 3) Jogadores cujo nome contenha a letra 'u'
+print("3️⃣ Jogadores com a letra 'u' no nome:\n")
+print(df.loc[df["nome_do_jogador"].str.contains("u", case=False), ["nome_do_jogador", "nome_time_jogador"]])
+print("\n" + "="*60 + "\n")
+
+# 4) Nome, salário e time ordenados pelo salário (decrescente)
+print("4️⃣ Jogadores ordenados por salário (decrescente):\n")
+print(df.sort_values(by="salario_do_jogador", ascending=False)[["nome_do_jogador", "salario_do_jogador", "nome_time_jogador"]])
+print("\n" + "="*60 + "\n")
+
+# 5) Nome, salário e time ordenados por time (asc) e salário (desc)
+print("5️⃣ Jogadores ordenados por time e salário:\n")
+print(df.sort_values(by=["nome_time_jogador", "salario_do_jogador"], ascending=[True, False])[["nome_do_jogador", "salario_do_jogador", "nome_time_jogador"]])
+print("\n" + "="*60 + "\n")
+
+# 6) Quantidade de jogadores por time
+print("6️⃣ Quantidade de jogadores por time:\n")
+print(df["nome_time_jogador"].value_counts())
+print("\n" + "="*60 + "\n")
+
+# 7) Média salarial por time
+print("7️⃣ Média salarial por time:\n")
+print(df.groupby("nome_time_jogador")["salario_do_jogador"].mean())
